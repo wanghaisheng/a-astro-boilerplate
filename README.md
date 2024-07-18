@@ -2,6 +2,16 @@
 
 A streamlined Astro starter template to eliminate the initial setup hassle for your projects.
 
+## Quick Start
+
+To create a new project using this template, run the following command:
+
+```shell
+npm create astro@latest -- --template tatumertanen/astro-boilerplate
+```
+
+This will set up a new Astro project with all the features and configurations included in this boilerplate.
+
 ## Features
 
 - Astro 4.12.0
