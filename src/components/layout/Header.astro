@@ -1,0 +1,47 @@
+---
+import { site, navlinks } from "@/config";
+import Container from "@/components/core/Container.astro";
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="bg-surface-light dark:bg-surface-dark">
+    <Container>
+        <div class="flex justify-between items-center py-4">
+            <div class="flex">
+                <a href="/" class="flex-shrink-0 flex items-center">
+                    <span
+                        class="text-2xl font-bold text-gray-900 dark:text-white"
+                        >{site.name}</span
+                    >
+                </a>
+            </div>
+            <div class="hidden sm:ml-6 sm:flex sm:items-center">
+                <nav>
+                    <ul class="flex space-x-4">
+                        {
+                            navlinks.map(({ name, path }) => (
+                                <li>
+                                    <a
+                                        href={path}
+                                        class:list={[
+                                            "px-3 py-2 rounded-md text-sm font-medium",
+                                            {
+                                                "bg-gray-900 text-white":
+                                                    path === currentPath,
+                                                "text-gray-300 hover:bg-gray-700 hover:text-white":
+                                                    path !== currentPath,
+                                            },
+                                        ]}
+                                    >
+                                        {name}
+                                    </a>
+                                </li>
+                            ))
+                        }
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </Container>
+</header>
