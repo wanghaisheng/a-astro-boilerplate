@@ -13,10 +13,6 @@ export default {
 					light: '#ffffff',
 					dark: '#1a202c',
 				},
-				surface: { // For cards, modals, elevated elements
-					light: '#f7fafc',
-					dark: '#2d3748',
-				},
 			},
 		},
 	},
