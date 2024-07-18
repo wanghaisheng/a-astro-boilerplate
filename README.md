@@ -1,54 +1,56 @@
-# Astro Starter Kit: Basics
+# Astro Boilerplate
+
+A streamlined Astro starter template to eliminate the initial setup hassle for your projects.
+
+## Features
+
+- Astro 4.12.0
+- Tailwind CSS 3.4.6
+- TypeScript 5.5.3
+- Sitemap generation
+- Partytown for third-party script optimization
+- Icon support with astro-icon
+
+## Quick Start
+
+1. Clone this repository
+2. Install dependencies:
 
 ```sh
-npm create astro@latest -- --template basics
+npm install
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+3. Start the development server:
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+```sh
+npm run dev
+```
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+## Available Scripts
 
-## 🚀 Project Structure
+- `npm run dev`: Start the development server
+- `npm run build`: Build for production
+- `npm run preview`: Preview the production build
+- `npm run astro`: Run Astro CLI commands
 
-Inside of your Astro project, you'll see the following folders and files:
+## Project Structure
 
-```text
+
 /
 ├── public/
-│   └── favicon.svg
 ├── src/
 │   ├── components/
-│   │   └── Card.astro
 │   ├── layouts/
-│   │   └── Layout.astro
 │   └── pages/
-│       └── index.astro
-└── package.json
-```
+├── astro.config.mjs
+├── package.json
+└── tailwind.config.mjs
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## Customization
 
-Any static assets, like images, can be placed in the `public/` directory.
+Edit `astro.config.mjs` to customize your site configuration and add or remove integrations.
 
-## 🧞 Commands
+## Learn More
 
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+For more information, check out the [Astro documentation](https://docs.astro.build).
