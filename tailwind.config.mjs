@@ -8,6 +8,16 @@ export default {
 				'8xl': '96rem',
 				'9xl': '128rem',
 			},
+			colors: {
+				base: { // Overall page background
+					light: '#ffffff',
+					dark: '#1a202c',
+				},
+				surface: { // For cards, modals, elevated elements
+					light: '#f7fafc',
+					dark: '#2d3748',
+				},
+			},
 		},
 	},
 	plugins: [
