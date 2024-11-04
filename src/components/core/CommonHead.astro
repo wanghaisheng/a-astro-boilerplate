@@ -1,0 +1,64 @@
+---
+// Define the canonical URL for SEO purposes
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+// Define default props with TypeScript interface
+import type { MetaProps } from "@/types";
+
+type Props = MetaProps;
+
+const { meta } = Astro.props;
+---
+
+<!-- Essential Meta Tags -->
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="generator" content={Astro.generator} />
+
+<!-- SEO Meta Tags -->
+<title>{meta.title}</title>
+<meta name="description" content={meta.description} />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href={canonicalURL} />
+
+<!-- Favicon Tags -->
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+<link rel="manifest" href="/site.webmanifest" />
+
+<!-- Open Graph / Facebook Meta Tags -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content={canonicalURL} />
+<meta property="og:title" content={meta.title} />
+<meta property="og:description" content={meta.description} />
+<meta property="og:image" content={meta.og.image} />
+
+<!-- Twitter Meta Tags -->
+<meta name="twitter:card" content={meta.twitter.card} />
+<meta name="twitter:creator" content={meta.twitter.creator} />
+<meta name="twitter:title" content={meta.title} />
+<meta name="twitter:description" content={meta.description} />
+<meta name="twitter:image" content={meta.twitter.image} />
+
+<!-- Sitemap and RSS -->
+<link rel="sitemap" href="/sitemap-index.xml" />
+<link
+  rel="alternate"
+  type="application/rss+xml"
+  title="RSS Feed"
+  href="/rss.xml"
+/>
+
+<!-- Preconnect to Common Third-party Domains -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+<!-- Theme Color for Browser -->
+<meta name="theme-color" content="#ffffff" />
+
+<!-- Mobile Meta Tags -->
+<meta name="format-detection" content="telephone=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="default" />
