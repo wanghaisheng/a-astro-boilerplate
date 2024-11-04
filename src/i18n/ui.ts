@@ -1,6 +1,6 @@
 export const languages = {
-    fi: 'Finnish',
-    en: 'English',
+    fi: 'Suomi',
+    en: 'Englanti',
 };
 
 export const defaultLang = 'fi';
@@ -9,6 +9,7 @@ export const showDefaultLang = false;
 
 export const ui = {
     fi: {
+        'header.cta': 'Aloita Nyt',
         'nav.home': 'Koti',
         'nav.about': 'Tietoa',
         'nav.services': 'Palvelut',
@@ -20,6 +21,7 @@ export const ui = {
         'footer.about': 'Your trusted partner in delivering exceptional solutions and services.',
     },
     en: {
+        'header.cta': 'Get Started',
         'nav.home': 'Home',
         'nav.about': 'About',
         'nav.services': 'Services',

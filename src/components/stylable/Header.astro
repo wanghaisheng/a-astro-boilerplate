@@ -18,69 +18,82 @@ const config = {
 
 import Nav from "../core/Nav.astro";
 import LanguagePicker from "../core/LanguagePicker.astro";
+import Container from "../core/Container.astro";
+
+import {
+  getLangFromUrl,
+  useTranslations,
+  useTranslatedPath,
+} from "@/i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
 ---
 
 <header class={`sticky top-0 z-50 bg-background shadow-sm ${customClass}`}>
-  <div class="container flex items-center justify-between py-4">
-    <div class="flex-shrink-0">
-      <a href="/" class="text-foreground text-2xl font-bold">
+  <Container>
+    <div class="flex items-center justify-between py-4">
+      <div class="flex-shrink-0">
+        <a href={translatePath("/")} class="text-foreground text-2xl font-bold">
+          {
+            site.logo ? (
+              <img src={site.logo} alt={site.name} class="h-10 w-auto" />
+            ) : (
+              <span>{site.name}</span>
+            )
+          }
+        </a>
+      </div>
+
+      {
+        showNav && (
+          <nav class="hidden md:block">
+            <Nav class="flex space-x-8" />
+          </nav>
+        )
+      }
+
+      <div class="flex items-center space-x-4">
         {
-          site.logo ? (
-            <img src={site.logo} alt={site.name} class="h-10 w-auto" />
-          ) : (
-            <span>{site.name}</span>
+          config.showSearch && (
+            <button
+              class="text-foreground hover:text-muted-foreground p-2"
+              aria-label="Toggle search"
+            >
+              <span class="sr-only">Search</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="11" cy="11" r="8" />
+                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+              </svg>
+            </button>
           )
         }
-      </a>
-    </div>
 
-    {
-      showNav && (
-        <nav class="hidden md:block">
-          <Nav class="flex space-x-8" />
-        </nav>
-      )
-    }
-
-    <div class="flex items-center space-x-4">
-      {
-        config.showSearch && (
-          <button
-            class="text-foreground hover:text-muted-foreground p-2"
-            aria-label="Toggle search"
-          >
-            <span class="sr-only">Search</span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+        {
+          config.showCTA && (
+            <a
+              href={translatePath(config.ctaLink)}
+              class="bg-primary text-primary-foreground hover:bg-primary/90 px-4 py-2 rounded-md transition-colors"
             >
-              <circle cx="11" cy="11" r="8" />
-              <line x1="21" y1="21" x2="16.65" y2="16.65" />
-            </svg>
-          </button>
-        )
-      }
-
-      {
-        config.showCTA && (
-          <a
-            href={config.ctaLink}
-            class="bg-primary text-primary-foreground hover:bg-primary/90 px-4 py-2 rounded-md transition-colors"
-          >
-            {config.ctaText}
-          </a>
-        )
-      }
-      <LanguagePicker />
+              {t("header.cta")}
+            </a>
+          )
+        }
+        <LanguagePicker />
+      </div>
     </div>
-  </div>
+  </Container>
 </header>
 
 <style>

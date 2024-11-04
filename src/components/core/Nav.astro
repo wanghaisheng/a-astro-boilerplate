@@ -19,7 +19,7 @@ const { class: className } = Astro.props;
 <ul class={className}>
   <li>
     <a
-      href="/"
+      href={translatePath("/")}
       class="text-foreground hover:text-muted-foreground font-medium transition-colors"
     >
       {t("nav.home")}

@@ -5,22 +5,22 @@ import Layout from "@/layouts/Layout.astro";
 import type { Metadata } from "@/types";
 
 const meta: Metadata = {
-  title: "Welcome to Our Website",
-  description: "Your trusted partner for innovative solutions",
+  title: "Welcome to the World of Innovation",
+  description: "Your trusted partner in digital solutions",
   author: "Company Name",
-  keywords: ["business", "services", "solutions", "professional"],
+  keywords: ["innovation", "digital services", "solutions", "expertise"],
   twitter: {
     card: "summary_large_image",
     site: site.url,
     creator: "@companyname",
-    image: "/images/social-share.jpg",
-    title: "Welcome to Our Website",
-    description: "Your trusted partner for innovative solutions",
+    image: "/images/hero-image.jpg",
+    title: "Welcome to the World of Innovation",
+    description: "Your trusted partner in digital solutions",
   },
   og: {
-    title: "Welcome to Our Website",
-    description: "Your trusted partner for innovative solutions",
-    image: "/images/social-share.jpg",
+    title: "Welcome to the World of Innovation",
+    description: "Your trusted partner in digital solutions",
+    image: "/images/hero-image.jpg",
     url: site.url,
     type: "website",
   },
@@ -30,45 +30,99 @@ const meta: Metadata = {
 <Layout meta={meta}>
   <Container>
     <div class="py-20 space-y-16">
-      <section class="text-center space-y-6">
-        <h1 class="text-5xl font-bold text-foreground">
-          Welcome to Company Name
-        </h1>
-        <p class="text-xl text-muted-foreground max-w-2xl mx-auto">
-          We specialize in delivering exceptional solutions for your business
-          needs. Discover how we can help you achieve your goals.
-        </p>
-        <div class="flex gap-4 justify-center">
-          <a
-            href="/services"
-            class="px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:opacity-90"
-            >Our Services</a
+      <section class="grid lg:grid-cols-2 gap-12 items-center">
+        <div class="space-y-6">
+          <h1
+            class="text-4xl lg:text-5xl font-bold text-foreground leading-tight"
           >
-          <a
-            href="/contact"
-            class="px-6 py-3 border border-input rounded-lg hover:bg-accent"
-            >Contact Us</a
-          >
+            Digital solutions for <span class="text-primary">future needs</span>
+          </h1>
+          <p class="text-xl text-muted-foreground">
+            We help your business succeed in the digital world. We offer
+            innovative solutions that enhance your business operations and
+            provide competitive advantage.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a
+              href="/services"
+              class="px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:opacity-90 text-center"
+              >Explore our services</a
+            >
+            <a
+              href="/contact"
+              class="px-6 py-3 border border-input rounded-lg hover:bg-accent text-center"
+              >Contact us</a
+            >
+          </div>
+        </div>
+        <div
+          class="relative h-[400px] lg:h-[500px] rounded-2xl overflow-hidden"
+        >
+          <img
+            src="https://images.pexels.com/photos/1563356/pexels-photo-1563356.jpeg?cs=srgb&dl=pexels-thatguycraig000-1563356.jpg&fm=jpg"
+            alt="Digital solutions"
+            class="absolute inset-0 w-full h-full object-cover"
+          />
         </div>
       </section>
 
       <section class="grid md:grid-cols-3 gap-8">
-        <div class="p-6 border border-input rounded-lg text-center">
-          <h2 class="text-xl font-semibold mb-4">Quality Service</h2>
+        <div
+          class="p-8 border border-input rounded-lg bg-card hover:shadow-lg transition-shadow"
+        >
+          <div class="mb-4">
+            <svg
+              class="w-12 h-12 text-primary"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 100-16 8 8 0 000 16zm-1-7h2v2h-2v-2zm0-8h2v6h-2V5z"
+              ></path>
+            </svg>
+          </div>
+          <h2 class="text-xl font-semibold mb-4">High Quality</h2>
           <p class="text-muted-foreground">
-            Delivering excellence in everything we do
+            We are committed to excellence in everything we do. Quality is our
+            matter of honor.
           </p>
         </div>
-        <div class="p-6 border border-input rounded-lg text-center">
+        <div
+          class="p-8 border border-input rounded-lg bg-card hover:shadow-lg transition-shadow"
+        >
+          <div class="mb-4">
+            <svg
+              class="w-12 h-12 text-primary"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 12.75c1.63 0 3.07.39 4.24.9 1.08.48 1.76 1.56 1.76 2.73V18H6v-1.61c0-1.18.68-2.26 1.76-2.73 1.17-.52 2.61-.91 4.24-.91zM4 13c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm18 0c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm-12-2c1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3 1.34 3 3 3z"
+              ></path>
+            </svg>
+          </div>
           <h2 class="text-xl font-semibold mb-4">Expert Team</h2>
           <p class="text-muted-foreground">
-            Professional staff ready to assist you
+            Our experienced professionals are ready to help you succeed.
           </p>
         </div>
-        <div class="p-6 border border-input rounded-lg text-center">
+        <div
+          class="p-8 border border-input rounded-lg bg-card hover:shadow-lg transition-shadow"
+        >
+          <div class="mb-4">
+            <svg
+              class="w-12 h-12 text-primary"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 2L1 21h22L12 2zm0 3.83L19.17 19H4.83L12 5.83zM11 16h2v2h-2v-2zm0-6h2v4h-2v-4z"
+              ></path>
+            </svg>
+          </div>
           <h2 class="text-xl font-semibold mb-4">Innovation</h2>
           <p class="text-muted-foreground">
-            Staying ahead with modern solutions
+            We continuously develop new solutions for future challenges.
           </p>
         </div>
       </section>

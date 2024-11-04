@@ -7,14 +7,15 @@ import {
   useTranslations,
   useTranslatedPath,
 } from "@/i18n/utils";
+import Container from "../core/Container.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const translatePath = useTranslatedPath(lang);
 ---
 
-<footer class="border-t border-gray-200 dark:border-gray-800">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<footer class="bg-black/50">
+  <Container>
     <div class="py-8 md:py-12">
       <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
         <div class="space-y-4">
@@ -110,12 +111,11 @@ const translatePath = useTranslatedPath(lang);
     </div>
     <div class="border-t border-gray-200 dark:border-gray-800 py-6">
       <div class="flex flex-col items-center gap-4">
-        <LanguagePicker />
         <p class="text-center text-gray-600 dark:text-gray-400">
           © {new Date().getFullYear()}
           {site.name}. All rights reserved.
         </p>
       </div>
     </div>
-  </div>
+  </Container>
 </footer>
