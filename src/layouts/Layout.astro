@@ -2,6 +2,7 @@
 import CommonHead from "@/components/core/CommonHead.astro";
 import type { MetaProps } from "@/types";
 import "@/assets/global.css";
+import Footer from "@/components/core/Footer.astro";
 
 const { meta } = Astro.props as MetaProps;
 ---
@@ -16,6 +17,6 @@ const { meta } = Astro.props as MetaProps;
     <main class:list={["flex flex-col flex-grow"]}>
       <slot />
     </main>
-    <!-- <Footer /> -->
+    <Footer />
   </body>
 </html>
