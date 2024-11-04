@@ -3,3 +3,9 @@
 ## Contributing/building:
 
 - Start by running `npm install`
+
+## TODO
+
+- [x] i18n 
+- [x] Responsive footer
+- [ ] Responsive header
