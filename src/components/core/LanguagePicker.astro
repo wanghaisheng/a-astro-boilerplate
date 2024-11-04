@@ -1,0 +1,43 @@
+---
+import { languages } from "@/i18n/ui";
+import {
+  getLangFromUrl,
+  getRouteFromUrl,
+  useTranslatedPath,
+} from "@/i18n/utils";
+import { Icon } from "astro-icon/components";
+
+const route = getRouteFromUrl(Astro.url);
+const currentLang = getLangFromUrl(Astro.url);
+const translatePath = useTranslatedPath(currentLang);
+---
+
+<div class="relative group">
+  <button class="flex items-center justify-center hover:bg-muted rounded-full">
+    <Icon name="mdi:web" class="w-5 h-5" />
+  </button>
+  <ul
+    class="absolute right-0 mt-4 py-2 w-32 bg-background border-2 border-muted rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200"
+  >
+    {
+      Object.entries(languages)
+        .filter(([lang]) => lang)
+        .map(([lang, label]) => (
+          <li class="px-4 py-2 hover:bg-muted">
+            <a
+              href={translatePath(`/${route ? route : ""}`, lang)}
+              title={`Change language to ${label}`}
+              class="flex items-center gap-2"
+            >
+              <img
+                src={`/flags/${lang}.svg`}
+                alt={label}
+                class="w-8 h-5 object-cover"
+              />
+              <span>{label}</span>
+            </a>
+          </li>
+        ))
+    }
+  </ul>
+</div>

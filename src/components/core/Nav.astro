@@ -1,0 +1,52 @@
+---
+import {
+  getLangFromUrl,
+  useTranslations,
+  useTranslatedPath,
+} from "@/i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
+
+interface Props {
+  class: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<ul class={className}>
+  <li>
+    <a
+      href="/"
+      class="text-foreground hover:text-muted-foreground font-medium transition-colors"
+    >
+      {t("nav.home")}
+    </a>
+  </li>
+  <li>
+    <a
+      href={translatePath("/tietoa")}
+      class="text-foreground hover:text-muted-foreground font-medium transition-colors"
+    >
+      {t("nav.about")}
+    </a>
+  </li>
+  <li>
+    <a
+      href={translatePath("/palvelut")}
+      class="text-foreground hover:text-muted-foreground font-medium transition-colors"
+    >
+      {t("nav.services")}
+    </a>
+  </li>
+  <li>
+    <a
+      href={translatePath("/ota-yhteyttä")}
+      class="text-foreground hover:text-muted-foreground font-medium transition-colors"
+    >
+      {t("nav.contact")}
+    </a>
+  </li>
+</ul>

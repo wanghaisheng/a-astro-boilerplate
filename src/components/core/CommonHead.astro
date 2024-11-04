@@ -9,6 +9,10 @@ import type { MetaProps } from "@/types";
 const { meta } = Astro.props as MetaProps;
 ---
 
+<!-- Preload images -->
+<link rel="preload" href="/flags/en.svg" as="image" />
+<link rel="preload" href="/flags/fi.svg" as="image" />
+
 <!-- Essential Meta Tags -->
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
