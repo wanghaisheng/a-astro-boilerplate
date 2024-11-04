@@ -2,12 +2,11 @@
 // Define the canonical URL for SEO purposes
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
+import { site } from "@/config";
 // Define default props with TypeScript interface
 import type { MetaProps } from "@/types";
 
-type Props = MetaProps;
-
-const { meta } = Astro.props;
+const { meta } = Astro.props as MetaProps;
 ---
 
 <!-- Essential Meta Tags -->
@@ -56,7 +55,7 @@ const { meta } = Astro.props;
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
 <!-- Theme Color for Browser -->
-<meta name="theme-color" content="#ffffff" />
+<meta name="theme-color" content={site.themeColor} />
 
 <!-- Mobile Meta Tags -->
 <meta name="format-detection" content="telephone=no" />

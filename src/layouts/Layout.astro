@@ -2,9 +2,7 @@
 import CommonHead from "@/components/core/CommonHead.astro";
 import type { MetaProps } from "@/types";
 
-type Props = MetaProps;
-
-const { meta } = Astro.props;
+const { meta } = Astro.props as MetaProps;
 ---
 
 <!doctype html>
